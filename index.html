@@ -461,34 +461,102 @@
             </div>
 
             <div class="mb-8">
-                <h4 class="text-base font-bold text-slate-900 mb-4 flex items-center"><i class="fa-solid fa-notes-medical text-brand-600 mr-2"></i> Procedimentos que necessitam de APAC e autorização</h4>
-                <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-sm">
-                    <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-3 text-xs text-slate-700">
-                        <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mr-2 mt-0.5"></i> Facoemulsificação</li>
-                        <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mr-2 mt-0.5"></i> Facoemulsificacao c/ implante de lente intra-ocular dobravel</li>
-                        <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mr-2 mt-0.5"></i> Facoemulsificacao c/ implante de lente intra-ocular dobravel – od</li>
-                        <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mr-2 mt-0.5"></i> Facoemulsificacao c/ implante de lente intra-ocular dobravel – oe</li>
-                        <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mr-2 mt-0.5"></i> Fotocoagulação a laser – ao</li>
-                        <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mr-2 mt-0.5"></i> Fotocoagulação a laser – ao pfc</li>
-                        <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mr-2 mt-0.5"></i> Fotocoagulação a laser – od</li>
-                        <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mr-2 mt-0.5"></i> Fotocoagulação a laser – oe</li>
-                        <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mr-2 mt-0.5"></i> Pan-fotocoagulação de retina a laser – ao</li>
-                        <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mr-2 mt-0.5"></i> Pan-fotocoagulação de retina a laser – od</li>
-                        <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mr-2 mt-0.5"></i> Pan-fotocoagulação de retina a laser – oe</li>
-                        <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mr-2 mt-0.5"></i> Pan-fotocoagulação a laser – ao</li>
-                        <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mr-2 mt-0.5"></i> Pan-fotocoagulação a laser – od</li>
-                        <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mr-2 mt-0.5"></i> Pan-fotocoagulação a laser – oe</li>
-                        <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mr-2 mt-0.5"></i> Capsulotomia a yag laser</li>
-                        <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mr-2 mt-0.5"></i> Capsulotomia a yag laser – ao</li>
-                        <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mr-2 mt-0.5"></i> Capsulotomia a yag laser – od</li>
-                        <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mr-2 mt-0.5"></i> Capsulotomia a yag laser – oe</li>
-                        <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mr-2 mt-0.5"></i> Tratamento medicamentoso de retina</li>
-                        <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mr-2 mt-0.5"></i> Tomografia de coerência óptica</li>
-                        <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mr-2 mt-0.5"></i> Postectomia</li>
-                        <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mr-2 mt-0.5"></i> Vasectomia</li>
-                        <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mr-2 mt-0.5"></i> Calazio</li>
-                        <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mr-2 mt-0.5"></i> Iridotomia</li>
-                    </ul>
+                <h4 class="text-base font-bold text-slate-900 mb-4 flex items-center"><i class="fa-solid fa-notes-medical text-brand-600 mr-2"></i> Procedimentos que necessitam de APAC e Autorização AC</h4>
+                
+                <div class="bg-slate-50 border border-slate-200 rounded-lg p-3 mb-4 flex items-start">
+                    <i class="fa-solid fa-circle-info text-brand-500 mt-0.5 mr-2 text-sm"></i>
+                    <p class="text-xs text-slate-700 leading-relaxed">
+                        <strong>Observação:</strong> Para os procedimentos oftalmológicos, as siglas OD, OE e AO correspondem, respectivamente, a olho direito, olho esquerdo e ambos os olhos, conforme a nomenclatura utilizada no sistema.
+                    </p>
+                </div>
+
+                <div class="columns-1 md:columns-2 lg:columns-3 gap-4 text-xs">
+                    <!-- Grupo: Facoemulsificação -->
+                    <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm mb-4 break-inside-avoid">
+                        <h5 class="font-bold text-slate-800 uppercase tracking-wider mb-3 border-b border-slate-100 pb-2">Facoemulsificação</h5>
+                        <ul class="space-y-2 text-slate-700">
+                            <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mr-2 mt-0.5"></i> Facoemulsificação</li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mr-2 mt-0.5"></i> Facoemulsificação c/ implante de lente intra-ocular dobrável</li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mr-2 mt-0.5"></i> Facoemulsificação c/ implante de lente intra-ocular dobrável – OD</li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mr-2 mt-0.5"></i> Facoemulsificação c/ implante de lente intra-ocular dobrável – OE</li>
+                        </ul>
+                    </div>
+
+                    <!-- Grupo: Pan-Foto / Foto -->
+                    <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm mb-4 break-inside-avoid">
+                        <h5 class="font-bold text-slate-800 uppercase tracking-wider mb-3 border-b border-slate-100 pb-2">Pan-Foto / Foto</h5>
+                        <ul class="space-y-2 text-slate-700">
+                            <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mr-2 mt-0.5"></i> Fotocoagulação a laser – AO</li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mr-2 mt-0.5"></i> Fotocoagulação a laser – AO PFC</li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mr-2 mt-0.5"></i> Fotocoagulação a laser – OD</li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mr-2 mt-0.5"></i> Fotocoagulação a laser – OE</li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mr-2 mt-0.5"></i> Pan-fotocoagulação de retina a laser – AO</li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mr-2 mt-0.5"></i> Pan-fotocoagulação de retina a laser – OD</li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mr-2 mt-0.5"></i> Pan-fotocoagulação de retina a laser – OE</li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mr-2 mt-0.5"></i> Pan-fotocoagulação a laser – AO</li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mr-2 mt-0.5"></i> Pan-fotocoagulação a laser – OD</li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mr-2 mt-0.5"></i> Pan-fotocoagulação a laser – OE</li>
+                        </ul>
+                    </div>
+
+                    <!-- Grupo: Capsulotomia / YAG -->
+                    <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm mb-4 break-inside-avoid">
+                        <h5 class="font-bold text-slate-800 uppercase tracking-wider mb-3 border-b border-slate-100 pb-2">Capsulotomia / YAG</h5>
+                        <ul class="space-y-2 text-slate-700">
+                            <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mr-2 mt-0.5"></i> Capsulotomia a YAG laser</li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mr-2 mt-0.5"></i> Capsulotomia a YAG laser – AO</li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mr-2 mt-0.5"></i> Capsulotomia a YAG laser – OD</li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mr-2 mt-0.5"></i> Capsulotomia a YAG laser – OE</li>
+                        </ul>
+                    </div>
+
+                    <!-- Grupo: TT Medicamentoso -->
+                    <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm mb-4 break-inside-avoid">
+                        <h5 class="font-bold text-slate-800 uppercase tracking-wider mb-3 border-b border-slate-100 pb-2">TT Medicamentoso</h5>
+                        <ul class="space-y-2 text-slate-700">
+                            <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mr-2 mt-0.5"></i> Tratamento medicamentoso de retina</li>
+                        </ul>
+                    </div>
+
+                    <!-- Grupo: OCT -->
+                    <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm mb-4 break-inside-avoid">
+                        <h5 class="font-bold text-slate-800 uppercase tracking-wider mb-3 border-b border-slate-100 pb-2">OCT</h5>
+                        <ul class="space-y-2 text-slate-700">
+                            <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mr-2 mt-0.5"></i> Tomografia de coerência óptica</li>
+                        </ul>
+                    </div>
+
+                    <!-- Grupo: Postectomia -->
+                    <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm mb-4 break-inside-avoid">
+                        <h5 class="font-bold text-slate-800 uppercase tracking-wider mb-3 border-b border-slate-100 pb-2">Postectomia</h5>
+                        <ul class="space-y-2 text-slate-700">
+                            <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mr-2 mt-0.5"></i> Postectomia</li>
+                        </ul>
+                    </div>
+
+                    <!-- Grupo: Vasectomia -->
+                    <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm mb-4 break-inside-avoid">
+                        <h5 class="font-bold text-slate-800 uppercase tracking-wider mb-3 border-b border-slate-100 pb-2">Vasectomia</h5>
+                        <ul class="space-y-2 text-slate-700">
+                            <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mr-2 mt-0.5"></i> Vasectomia</li>
+                        </ul>
+                    </div>
+
+                    <!-- Grupo: Calázio -->
+                    <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm mb-4 break-inside-avoid">
+                        <h5 class="font-bold text-slate-800 uppercase tracking-wider mb-3 border-b border-slate-100 pb-2">Calázio</h5>
+                        <ul class="space-y-2 text-slate-700">
+                            <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mr-2 mt-0.5"></i> Calázio</li>
+                        </ul>
+                    </div>
+
+                    <!-- Grupo: Iridotomia -->
+                    <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm mb-4 break-inside-avoid">
+                        <h5 class="font-bold text-slate-800 uppercase tracking-wider mb-3 border-b border-slate-100 pb-2">Iridotomia</h5>
+                        <ul class="space-y-2 text-slate-700">
+                            <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mr-2 mt-0.5"></i> Iridotomia</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
@@ -519,14 +587,12 @@
                 </div>
                 <h3 class="text-2xl font-bold text-slate-900">Tratamento Fora de Domicílio – TFD</h3>
             </div>
-                    <h3 class="text-2xl font-bold text-slate-900">Tratamento Fora de Domicílio – TFD</h3>
-                </div>
 
-                <div class="bg-indigo-50 border-l-4 border-indigo-500 p-5 rounded-r-xl mb-8">
-                    <p class="text-sm text-indigo-950 leading-relaxed font-normal">
-                        O <strong>Tratamento Fora do Domicílio (TFD)</strong> garante deslocamento e ajuda de custo para pacientes e acompanhante, quando necessário, atendidos na rede pública ou conveniada/contratada do SUS, que necessitem de assistência ambulatorial ou hospitalar para procedimentos de média ou alta complexidade que não sejam realizados no município de residência ou na Região de Saúde.
-                    </p>
-                </div>
+            <div class="bg-indigo-50 border-l-4 border-indigo-500 p-5 rounded-r-xl mb-8">
+                <p class="text-sm text-indigo-950 leading-relaxed font-normal">
+                    O <strong>Tratamento Fora do Domicílio (TFD)</strong> garante deslocamento e ajuda de custo para pacientes e acompanhante, quando necessário, atendidos na rede pública ou conveniada/contratada do SUS, que necessitem de assistência ambulatorial ou hospitalar para procedimentos de média ou alta complexidade que não sejam realizados no município de residência ou na Região de Saúde.
+                </p>
+            </div>
 
                 <div class="mb-8">
                     <h4 class="text-base font-bold text-slate-900 mb-2 flex items-center">
