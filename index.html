@@ -603,17 +603,38 @@
                         </div>
                     </div>
 
-                    <div>
-                        <h4 class="text-base font-bold text-slate-900 mb-4 flex items-center">
-                            <i class="fa-solid fa-file-pdf text-brand-600 mr-2"></i> Formulários SES
-                        </h4>
-                        <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 text-xs text-slate-700">
-                            <p class="mb-4 leading-relaxed">
-                                Os anexos para preenchimento de TFD interestadual podem ser encontrados diretamente no site oficial da Secretaria de Estado da Saúde de Santa Catarina (SES/SC).
-                            </p>
-                            <a href="https://www.saude.sc.gov.br/index.php/pt/regulacao/tratamento-fora-do-domicilio-tfd" target="_blank" class="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-bold px-4 py-2.5 rounded-lg text-xs transition-colors shadow-sm">
-                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Acessar Formulários TFD (SES/SC)
-                            </a>
+                    <div class="space-y-4">
+                        <!-- Cartão de Atalho para o Manual do TFD no Google Drive -->
+                        <div class="bg-gradient-to-r from-indigo-900 to-slate-900 text-white p-5 rounded-xl border border-indigo-700 shadow-sm relative overflow-hidden">
+                            <div class="absolute -right-3 -bottom-3 text-white/5 text-7xl font-bold pointer-events-none">
+                                <i class="fa-solid fa-book-medical"></i>
+                            </div>
+                            <div class="relative z-10">
+                                <span class="bg-amber-400 text-slate-900 text-[10px] font-extrabold px-2 py-0.5 rounded uppercase tracking-wider mb-2 inline-block">Manual Oficial 2026</span>
+                                <h5 class="text-sm font-bold text-white mb-1 flex items-center gap-2">
+                                    <i class="fa-solid fa-file-word text-amber-400"></i> Manual de Normatização do TFD
+                                </h5>
+                                <p class="text-xs text-slate-300 mb-3 leading-relaxed">
+                                    Guia técnico completo com competências, regras de concessão, diárias/ajuda de custo, transporte e fluxos de trabalho do setor para consulta dos profissionais de saúde.
+                                </p>
+                                <a href="https://docs.google.com/document/d/1FcE2QsLcPYlRo9hUR-1IlnVjjGremh7Q/edit?usp=sharing&ouid=111490148582122841895&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-amber-400 hover:bg-amber-300 text-slate-900 font-bold px-4 py-2 rounded-lg text-xs transition-colors shadow">
+                                    <i class="fa-brands fa-google-drive"></i> Abrir Manual no Google Drive <i class="fa-solid fa-arrow-up-right-from-square text-[10px] ml-1"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 class="text-base font-bold text-slate-900 mb-4 flex items-center">
+                                <i class="fa-solid fa-file-pdf text-brand-600 mr-2"></i> Formulários SES
+                            </h4>
+                            <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 text-xs text-slate-700">
+                                <p class="mb-4 leading-relaxed">
+                                    Os anexos para preenchimento de TFD interestadual podem ser encontrados diretamente no site oficial da Secretaria de Estado da Saúde de Santa Catarina (SES/SC).
+                                </p>
+                                <a href="https://www.saude.sc.gov.br/index.php/pt/regulacao/tratamento-fora-do-domicilio-tfd" target="_blank" class="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-bold px-4 py-2.5 rounded-lg text-xs transition-colors shadow-sm">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Acessar Formulários TFD (SES/SC)
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -665,7 +686,7 @@
             <div class="flex flex-col md:flex-row md:items-center justify-between mb-8">
                 <div>
                     <h2 class="text-2xl font-bold text-slate-900">Downloads e Documentos</h2>
-                    <p class="text-xs text-slate-500 mt-1">Acesse formulários, termos e guias oficiais em formato PDF ou Imagem</p>
+                    <p class="text-xs text-slate-500 mt-1">Acesse formulários, termos, guias e manuais oficiais</p>
                 </div>
                 <div class="mt-4 md:mt-0">
                     <span class="text-xs text-slate-600 bg-white border border-slate-200 px-3 py-1.5 rounded-lg font-medium shadow-sm">
@@ -675,6 +696,23 @@
             </div>
 
             <div class="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm divide-y divide-slate-100" id="files-list">
+                <!-- Manual do TFD Item na lista de arquivos -->
+                <div class="p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between hover:bg-indigo-50/50 transition-colors file-row bg-indigo-50/20">
+                    <div class="flex items-start space-x-3 mb-3 sm:mb-0">
+                        <div class="text-indigo-600 text-2xl mt-0.5"><i class="fa-solid fa-book-medical"></i></div>
+                        <div>
+                            <div class="flex items-center gap-2">
+                                <h4 class="text-sm font-bold text-slate-900">Manual de Normatização do TFD (SMS Florianópolis - 2026)</h4>
+                                <span class="bg-amber-100 text-amber-800 text-[10px] font-bold px-1.5 py-0.5 rounded uppercase">Destaque</span>
+                            </div>
+                            <p class="text-xs text-slate-500">Documento de orientação técnica dos fluxos, diretrizes e processos de trabalho do TFD para profissionais de saúde.</p>
+                        </div>
+                    </div>
+                    <a href="https://docs.google.com/document/d/1FcE2QsLcPYlRo9hUR-1IlnVjjGremh7Q/edit?usp=sharing&ouid=111490148582122841895&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer" class="self-start sm:self-auto bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold px-4 py-2 rounded-lg transition-colors flex items-center shadow-sm">
+                        <i class="fa-brands fa-google-drive mr-1.5"></i> Abrir no Drive
+                    </a>
+                </div>
+
                 <!-- File Item 1 -->
                 <div class="p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between hover:bg-slate-50 transition-colors file-row">
                     <div class="flex items-start space-x-3 mb-3 sm:mb-0">
