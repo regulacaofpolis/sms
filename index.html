@@ -97,13 +97,13 @@
                             <i class="fa-solid fa-chevron-down text-[10px] transition-transform group-hover:rotate-180 opacity-70"></i>
                         </button>
                         <div class="absolute left-0 top-full hidden group-hover:block w-56 bg-white border border-slate-200 rounded-xl shadow-xl py-2 z-50 animate-fadeIn">
-                            <a href="#apac-detalhes" class="flex items-center gap-2.5 px-4 py-2.5 text-xs text-slate-700 hover:bg-slate-50 hover:text-brand-600 font-medium transition-colors">
+                            <a href="javascript:void(0)" onclick="openModal('modal-apac')" class="flex items-center gap-2.5 px-4 py-2.5 text-xs text-slate-700 hover:bg-slate-50 hover:text-brand-600 font-medium transition-colors">
                                 <i class="fa-solid fa-file-prescription text-brand-600 w-4"></i> APAC
                             </a>
-                            <a href="#tfd-detalhes" class="flex items-center gap-2.5 px-4 py-2.5 text-xs text-slate-700 hover:bg-slate-50 hover:text-brand-600 font-medium transition-colors">
+                            <a href="javascript:void(0)" onclick="openModal('modal-tfd')" class="flex items-center gap-2.5 px-4 py-2.5 text-xs text-slate-700 hover:bg-slate-50 hover:text-brand-600 font-medium transition-colors">
                                 <i class="fa-solid fa-plane-departure text-brand-600 w-4"></i> TFD
                             </a>
-                            <a href="#saude-auditiva" class="flex items-center gap-2.5 px-4 py-2.5 text-xs text-slate-700 hover:bg-slate-50 hover:text-brand-600 font-medium transition-colors">
+                            <a href="javascript:void(0)" onclick="openModal('modal-saude-auditiva')" class="flex items-center gap-2.5 px-4 py-2.5 text-xs text-slate-700 hover:bg-slate-50 hover:text-brand-600 font-medium transition-colors">
                                 <i class="fa-solid fa-ear-listen text-brand-600 w-4"></i> Saúde Auditiva
                             </a>
                         </div>
@@ -144,9 +144,9 @@
                     <i class="fa-solid fa-chevron-down text-xs transition-transform" id="mobile-dropdown-icon-2"></i>
                 </button>
                 <div id="mobile-dropdown-menu-2" class="hidden pl-4 space-y-2 border-l-2 border-brand-600 my-1">
-                    <a href="#apac-detalhes" class="block py-1.5 text-xs text-slate-600 hover:text-brand-600 font-medium">APAC</a>
-                    <a href="#tfd-detalhes" class="block py-1.5 text-xs text-slate-600 hover:text-brand-600 font-medium">TFD</a>
-                    <a href="#saude-auditiva" class="block py-1.5 text-xs text-slate-600 hover:text-brand-600 font-medium">Saúde Auditiva</a>
+                    <a href="javascript:void(0)" onclick="openModal('modal-apac')" class="block py-1.5 text-xs text-slate-600 hover:text-brand-600 font-medium">APAC</a>
+                    <a href="javascript:void(0)" onclick="openModal('modal-tfd')" class="block py-1.5 text-xs text-slate-600 hover:text-brand-600 font-medium">TFD</a>
+                    <a href="javascript:void(0)" onclick="openModal('modal-saude-auditiva')" class="block py-1.5 text-xs text-slate-600 hover:text-brand-600 font-medium">Saúde Auditiva</a>
                 </div>
             </div>
 
@@ -352,7 +352,7 @@
                         Autorização de Procedimentos Ambulatoriais. Laudos de LME, medicamentos de alto custo e procedimentos de alta complexidade.
                     </p>
                 </div>
-                <a href="#apac-detalhes" class="text-brand-600 font-semibold text-xs inline-flex items-center hover:underline">
+                <a href="javascript:void(0)" onclick="openModal('modal-apac')" class="text-brand-600 font-semibold text-xs inline-flex items-center hover:underline">
                     Ver Detalhes sobre APAC <i class="fa-solid fa-arrow-right ml-1.5"></i>
                 </a>
             </div>
@@ -368,7 +368,7 @@
                         Tratamento Fora do Domicílio. Regras, documentação necessária e formulários para deslocamentos interestaduais ou intermunicipais.
                     </p>
                 </div>
-                <a href="#tfd-detalhes" class="text-brand-600 font-semibold text-xs inline-flex items-center hover:underline">
+                <a href="javascript:void(0)" onclick="openModal('modal-tfd')" class="text-brand-600 font-semibold text-xs inline-flex items-center hover:underline">
                     Ver Detalhes sobre TFD <i class="fa-solid fa-arrow-right ml-1.5"></i>
                 </a>
             </div>
@@ -384,14 +384,19 @@
                         Fluxos para concessão de aparelhos auditivos (AASI), exames audiológicos e reabilitação na rede de saúde.
                     </p>
                 </div>
-                <a href="#downloads" class="text-brand-600 font-semibold text-xs inline-flex items-center hover:underline">
+                <a href="javascript:void(0)" onclick="openModal('modal-saude-auditiva')" class="text-brand-600 font-semibold text-xs inline-flex items-center hover:underline">
                     Ver Diretrizes de Saúde Auditiva <i class="fa-solid fa-arrow-right ml-1.5"></i>
                 </a>
             </div>
         </div>
 
-        <!-- Detalhamento APAC -->
-        <div id="apac-detalhes" class="mt-12 bg-white border border-slate-200 rounded-2xl p-6 sm:p-10 shadow-sm scroll-mt-24">
+        <!-- Detalhamento APAC (Agora como Modal) -->
+        <div id="modal-apac" class="fixed inset-0 z-[100] hidden flex-col items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4">
+            <div class="bg-white w-full max-w-5xl max-h-[90vh] overflow-y-auto rounded-2xl shadow-2xl relative animate-fadeIn">
+                <button onclick="closeModal('modal-apac')" class="absolute top-4 right-4 text-slate-500 hover:text-slate-800 bg-slate-100 hover:bg-slate-200 rounded-full w-8 h-8 flex items-center justify-center transition-colors z-10">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <div class="p-6 sm:p-10">
             <div class="flex items-center space-x-3 mb-6">
                 <div class="w-10 h-10 bg-amber-100 text-amber-600 rounded-lg flex items-center justify-center text-xl">
                     <i class="fa-solid fa-file-prescription"></i>
@@ -578,9 +583,16 @@
                 </p>
             </div>
         </div>
+        </div>
+        </div>
 
-        <!-- Detalhamento TFD - Bloco Independente com Âncora Própria -->
-        <div id="tfd-detalhes" class="mt-8 bg-white border border-slate-200 rounded-2xl p-6 sm:p-10 shadow-sm scroll-mt-24">
+        <!-- Detalhamento TFD (Agora como Modal) -->
+        <div id="modal-tfd" class="fixed inset-0 z-[100] hidden flex-col items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4">
+            <div class="bg-white w-full max-w-5xl max-h-[90vh] overflow-y-auto rounded-2xl shadow-2xl relative animate-fadeIn">
+                <button onclick="closeModal('modal-tfd')" class="absolute top-4 right-4 text-slate-500 hover:text-slate-800 bg-slate-100 hover:bg-slate-200 rounded-full w-8 h-8 flex items-center justify-center transition-colors z-10">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <div class="p-6 sm:p-10">
             <div class="flex items-center space-x-3 mb-6">
                 <div class="w-10 h-10 bg-indigo-100 text-indigo-600 rounded-lg flex items-center justify-center text-xl">
                     <i class="fa-solid fa-plane-departure"></i>
@@ -717,6 +729,49 @@
                                 </a>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <!-- Detalhamento Saúde Auditiva (Modal) -->
+        <div id="modal-saude-auditiva" class="fixed inset-0 z-[100] hidden flex-col items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4">
+            <div class="bg-white w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-2xl shadow-2xl relative animate-fadeIn">
+                <button onclick="closeModal('modal-saude-auditiva')" class="absolute top-4 right-4 text-slate-500 hover:text-slate-800 bg-slate-100 hover:bg-slate-200 rounded-full w-8 h-8 flex items-center justify-center transition-colors z-10">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <div class="p-6 sm:p-10">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-10 h-10 bg-teal-100 text-teal-600 rounded-lg flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-ear-listen"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900">Saúde Auditiva</h3>
+                    </div>
+                    
+                    <p class="text-slate-700 text-sm leading-relaxed mb-6">
+                        O acesso aos serviços de <strong>Saúde Auditiva</strong> no SUS compreende a avaliação, diagnóstico e reabilitação, incluindo a concessão de Aparelhos de Amplificação Sonora Individual (AASI).
+                    </p>
+
+                    <div class="bg-teal-50 border-l-4 border-teal-500 p-5 rounded-r-xl mb-6">
+                        <h4 class="font-bold text-teal-900 mb-2">Fluxo de Encaminhamento</h4>
+                        <ol class="list-decimal list-inside space-y-2 text-sm text-teal-800">
+                            <li>O paciente passa por avaliação na Unidade Básica de Saúde (UBS).</li>
+                            <li>O médico da UBS solicita avaliação especializada em Otorrinolaringologia/Audiologia.</li>
+                            <li>A solicitação é inserida no SISREG.</li>
+                            <li>Após autorização pela regulação, o paciente é encaminhado ao serviço de referência para triagem e testes audiológicos.</li>
+                        </ol>
+                    </div>
+
+                    <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 mt-6">
+                        <h4 class="text-base font-bold text-slate-900 mb-3"><i class="fa-solid fa-folder-open text-brand-600 mr-2"></i> Documentação Obrigatória para Inserção no TFD Intraestadual</h4>
+                        <ul class="space-y-2 text-sm text-slate-700">
+                            <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mr-2 mt-0.5"></i> Cópia do documento de identidade com foto (ou certidão de nascimento para menores);</li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mr-2 mt-0.5"></i> Cópia do CPF;</li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mr-2 mt-0.5"></i> Cartão Nacional do SUS;</li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mr-2 mt-0.5"></i> Comprovante de residência atualizado no nome do paciente ou responsável legal;</li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mr-2 mt-0.5"></i> Laudo médico intraestadual preenchido e assinado.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -936,6 +991,32 @@
                 file.style.display = text.includes(query) ? 'flex' : 'none';
             });
         }
+
+        // --- Funções para controle das Janelas Modais (APAC, TFD, Saúde Auditiva) ---
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                document.body.classList.add('overflow-hidden'); // Bloqueia rolagem do fundo
+            }
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                document.body.classList.remove('overflow-hidden'); // Restaura rolagem normal da página
+            }
+        }
+
+        // Fechar a modal ao clicar fora da área de conteúdo (no fundo escurecido)
+        window.addEventListener('click', function(event) {
+            if (event.target.classList.contains('fixed') && event.target.id.startsWith('modal-')) {
+                closeModal(event.target.id);
+            }
+        });
     </script>
 </body>
 </html>
