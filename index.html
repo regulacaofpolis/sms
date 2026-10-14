@@ -81,7 +81,7 @@
                             <a href="#exames" class="flex items-center gap-2.5 px-4 py-2.5 text-xs text-slate-700 hover:bg-slate-50 hover:text-brand-600 font-medium transition-colors">
                                 <i class="fa-solid fa-microscope text-brand-600 w-4"></i> Exames
                             </a>
-                            <a href="#odontologia" class="flex items-center gap-2.5 px-4 py-2.5 text-xs text-slate-700 hover:bg-slate-50 hover:text-brand-600 font-medium transition-colors">
+                            <a href="javascript:void(0)" onclick="openModal('modal-odontologia')" class="flex items-center gap-2.5 px-4 py-2.5 text-xs text-slate-700 hover:bg-slate-50 hover:text-brand-600 font-medium transition-colors">
                                 <i class="fa-solid fa-tooth text-brand-600 w-4"></i> Odontologia
                             </a>
                             <a href="#protocolos-ses" class="flex items-center gap-2.5 px-4 py-2.5 text-xs text-slate-700 hover:bg-slate-50 hover:text-brand-600 font-medium transition-colors">
@@ -132,7 +132,7 @@
                 <div id="mobile-dropdown-menu" class="hidden pl-4 space-y-2 border-l-2 border-brand-600 my-1">
                     <a href="javascript:void(0)" onclick="openModal('modal-especialidades')" class="block py-1.5 text-xs text-slate-600 hover:text-brand-600 font-medium">Especialidades</a>
                     <a href="#exames" class="block py-1.5 text-xs text-slate-600 hover:text-brand-600 font-medium">Exames</a>
-                    <a href="#odontologia" class="block py-1.5 text-xs text-slate-600 hover:text-brand-600 font-medium">Odontologia</a>
+                    <a href="javascript:void(0)" onclick="openModal('modal-odontologia')" class="block py-1.5 text-xs text-slate-600 hover:text-brand-600 font-medium">Odontologia</a>
                     <a href="#protocolos-ses" class="block py-1.5 text-xs text-slate-600 hover:text-brand-600 font-medium">Protocolos SES</a>
                 </div>
             </div>
@@ -262,7 +262,7 @@
                         Protocolos dos Centros de Especialidades Odontológicas (CEO) e encaminhamentos bucomaxilofaciais.
                     </p>
                 </div>
-                <a href="#downloads" class="text-brand-600 font-semibold text-xs inline-flex items-center hover:underline">
+                <a href="javascript:void(0)" onclick="openModal('modal-odontologia')" class="text-brand-600 font-semibold text-xs inline-flex items-center hover:underline">
                     Ver Protocolos de Odontologia <i class="fa-solid fa-arrow-right ml-1.5"></i>
                 </a>
             </div>
@@ -283,6 +283,78 @@
                 </a>
             </div>
 
+        </div>
+
+        <!-- Protocolos de Odontologia: mesma estrutura visual de Especialidades -->
+        <div id="modal-odontologia" class="fixed inset-0 z-[100] hidden flex-col items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4">
+            <div class="bg-white w-full max-w-5xl max-h-[90vh] overflow-y-auto rounded-2xl shadow-2xl relative animate-fadeIn">
+                <button onclick="closeModal('modal-odontologia')" aria-label="Fechar protocolos de odontologia" class="absolute top-4 right-4 text-slate-500 hover:text-slate-800 bg-slate-100 hover:bg-slate-200 rounded-full w-8 h-8 flex items-center justify-center transition-colors z-10"><i class="fa-solid fa-xmark"></i></button>
+                <div class="p-6 sm:p-10">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-10 h-10 bg-purple-100 text-purple-600 rounded-lg flex items-center justify-center text-xl"><i class="fa-solid fa-tooth"></i></div>
+                        <h3 class="text-2xl font-bold text-slate-900">Protocolos de Odontologia</h3>
+                    </div>
+                    <p class="text-slate-700 text-sm leading-relaxed mb-6">Selecione um protocolo para acessar o documento no Google Drive.</p>
+                    <div class="mb-6 relative"><div class="flex items-center bg-slate-50 rounded-xl overflow-hidden p-1.5 border border-slate-200 shadow-inner">
+                        <i class="fa-solid fa-magnifying-glass text-slate-400 text-sm ml-3 mr-2"></i>
+                        <input type="text" id="search-modal-odontologia" onkeyup="filterModalOdontologia()" placeholder="Filtrar protocolos de odontologia..." class="w-full py-2 px-2 bg-transparent text-slate-800 text-sm focus:outline-none placeholder:text-slate-400">
+                    </div></div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4" id="modal-odontologia-grid">
+                        <div class="odontologia-protocol-item bg-white border border-slate-200 p-4 rounded-xl flex flex-col justify-between hover:border-purple-300 hover:shadow-md transition-all">
+                            <h5 class="text-[11px] font-bold text-slate-800 mb-3 leading-snug uppercase">SMS - CONSULTA EM BUCOMAXILOFACIAL</h5>
+                            <a href="https://drive.google.com/file/d/1Aw0iPXsP7Bm5KtZcHjCU12PQFNk3GkJ1/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full gap-1.5 bg-purple-50 hover:bg-purple-100 text-purple-600 font-semibold px-3 py-2.5 rounded-lg text-[10px] uppercase tracking-wider transition-colors border border-purple-200"><i class="fa-brands fa-google-drive text-sm"></i> Acessar</a>
+                        </div>
+                        <div class="odontologia-protocol-item bg-white border border-slate-200 p-4 rounded-xl flex flex-col justify-between hover:border-purple-300 hover:shadow-md transition-all">
+                            <h5 class="text-[11px] font-bold text-slate-800 mb-3 leading-snug uppercase">SMS - CONSULTA EM ENDODONTIA</h5>
+                            <a href="https://drive.google.com/file/d/1v6ddJvqOXpTydCWbf2LTMs28nJCPhsal/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full gap-1.5 bg-purple-50 hover:bg-purple-100 text-purple-600 font-semibold px-3 py-2.5 rounded-lg text-[10px] uppercase tracking-wider transition-colors border border-purple-200"><i class="fa-brands fa-google-drive text-sm"></i> Acessar</a>
+                        </div>
+                        <div class="odontologia-protocol-item bg-white border border-slate-200 p-4 rounded-xl flex flex-col justify-between hover:border-purple-300 hover:shadow-md transition-all">
+                            <h5 class="text-[11px] font-bold text-slate-800 mb-3 leading-snug uppercase">SMS - CONSULTA EM ENDODONTIA DE DECÍDUOS</h5>
+                            <a href="https://drive.google.com/file/d/18jglt_Qi1Rli2qXYwr2U7LDoTdKSfEpz/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full gap-1.5 bg-purple-50 hover:bg-purple-100 text-purple-600 font-semibold px-3 py-2.5 rounded-lg text-[10px] uppercase tracking-wider transition-colors border border-purple-200"><i class="fa-brands fa-google-drive text-sm"></i> Acessar</a>
+                        </div>
+                        <div class="odontologia-protocol-item bg-white border border-slate-200 p-4 rounded-xl flex flex-col justify-between hover:border-purple-300 hover:shadow-md transition-all">
+                            <h5 class="text-[11px] font-bold text-slate-800 mb-3 leading-snug uppercase">SMS - ESTOMATOLOGIA</h5>
+                            <a href="https://drive.google.com/file/d/1S8b5k7yuU7atr0p7EpAOA3HvOpIbhwjZ/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full gap-1.5 bg-purple-50 hover:bg-purple-100 text-purple-600 font-semibold px-3 py-2.5 rounded-lg text-[10px] uppercase tracking-wider transition-colors border border-purple-200"><i class="fa-brands fa-google-drive text-sm"></i> Acessar</a>
+                        </div>
+                        <div class="odontologia-protocol-item bg-white border border-slate-200 p-4 rounded-xl flex flex-col justify-between hover:border-purple-300 hover:shadow-md transition-all">
+                            <h5 class="text-[11px] font-bold text-slate-800 mb-3 leading-snug uppercase">SMS - FRENECTOMIA/FRENOTOMIA</h5>
+                            <a href="https://drive.google.com/file/d/16CyBH-s-3o6rZGADwAbVWeBQwCifqVCo/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full gap-1.5 bg-purple-50 hover:bg-purple-100 text-purple-600 font-semibold px-3 py-2.5 rounded-lg text-[10px] uppercase tracking-wider transition-colors border border-purple-200"><i class="fa-brands fa-google-drive text-sm"></i> Acessar</a>
+                        </div>
+                        <div class="odontologia-protocol-item bg-white border border-slate-200 p-4 rounded-xl flex flex-col justify-between hover:border-purple-300 hover:shadow-md transition-all">
+                            <h5 class="text-[11px] font-bold text-slate-800 mb-3 leading-snug uppercase">SMS - ODONTOPEDIATRIA</h5>
+                            <a href="https://drive.google.com/file/d/12cqx8n1iJSpRoP5ltWb5otzN-duXB8np/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full gap-1.5 bg-purple-50 hover:bg-purple-100 text-purple-600 font-semibold px-3 py-2.5 rounded-lg text-[10px] uppercase tracking-wider transition-colors border border-purple-200"><i class="fa-brands fa-google-drive text-sm"></i> Acessar</a>
+                        </div>
+                        <div class="odontologia-protocol-item bg-white border border-slate-200 p-4 rounded-xl flex flex-col justify-between hover:border-purple-300 hover:shadow-md transition-all">
+                            <h5 class="text-[11px] font-bold text-slate-800 mb-3 leading-snug uppercase">SMS - PERIODONTIA</h5>
+                            <a href="https://drive.google.com/file/d/1qVQIuT-iX0RmdwiTs7Buo78dRknj5eBe/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full gap-1.5 bg-purple-50 hover:bg-purple-100 text-purple-600 font-semibold px-3 py-2.5 rounded-lg text-[10px] uppercase tracking-wider transition-colors border border-purple-200"><i class="fa-brands fa-google-drive text-sm"></i> Acessar</a>
+                        </div>
+                        <div class="odontologia-protocol-item bg-white border border-slate-200 p-4 rounded-xl flex flex-col justify-between hover:border-purple-300 hover:shadow-md transition-all">
+                            <h5 class="text-[11px] font-bold text-slate-800 mb-3 leading-snug uppercase">SMS - CONSULTA ODONTO PCTE NECESSIDADES ESPECIAIS</h5>
+                            <a href="https://drive.google.com/file/d/1slO6ZD-qVzmSywm9wJORG80k7GXXNBpT/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full gap-1.5 bg-purple-50 hover:bg-purple-100 text-purple-600 font-semibold px-3 py-2.5 rounded-lg text-[10px] uppercase tracking-wider transition-colors border border-purple-200"><i class="fa-brands fa-google-drive text-sm"></i> Acessar</a>
+                        </div>
+                        <div class="odontologia-protocol-item bg-white border border-slate-200 p-4 rounded-xl flex flex-col justify-between hover:border-purple-300 hover:shadow-md transition-all">
+                            <h5 class="text-[11px] font-bold text-slate-800 mb-3 leading-snug uppercase">SMS - CIRURGIA ODONTO - PCTE COM NECESSIDADES ESPECIAIS</h5>
+                            <a href="https://drive.google.com/file/d/1eYrAld0F2kgAPYDrXr5wgRajO7X1bs8o/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full gap-1.5 bg-purple-50 hover:bg-purple-100 text-purple-600 font-semibold px-3 py-2.5 rounded-lg text-[10px] uppercase tracking-wider transition-colors border border-purple-200"><i class="fa-brands fa-google-drive text-sm"></i> Acessar</a>
+                        </div>
+                        <div class="odontologia-protocol-item bg-white border border-slate-200 p-4 rounded-xl flex flex-col justify-between hover:border-purple-300 hover:shadow-md transition-all">
+                            <h5 class="text-[11px] font-bold text-slate-800 mb-3 leading-snug uppercase">SMS - CONSULTA EM PRÓTESE DENTÁRIA TOTAL</h5>
+                            <a href="https://drive.google.com/file/d/1EZsAlRYFKwvcwnQlrZKmcZm1M21bdZl9/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full gap-1.5 bg-purple-50 hover:bg-purple-100 text-purple-600 font-semibold px-3 py-2.5 rounded-lg text-[10px] uppercase tracking-wider transition-colors border border-purple-200"><i class="fa-brands fa-google-drive text-sm"></i> Acessar</a>
+                        </div>
+                        <div class="odontologia-protocol-item bg-white border border-slate-200 p-4 rounded-xl flex flex-col justify-between hover:border-purple-300 hover:shadow-md transition-all">
+                            <h5 class="text-[11px] font-bold text-slate-800 mb-3 leading-snug uppercase">SMS - GRUPO - RADIOLOGIA ODONTOLÓGICA</h5>
+                            <a href="https://drive.google.com/file/d/18mY8OjPMLGWzAwtSHbm7OgjWueEhbGL8/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full gap-1.5 bg-purple-50 hover:bg-purple-100 text-purple-600 font-semibold px-3 py-2.5 rounded-lg text-[10px] uppercase tracking-wider transition-colors border border-purple-200"><i class="fa-brands fa-google-drive text-sm"></i> Acessar</a>
+                        </div>
+                        <div class="odontologia-protocol-item bg-white border border-slate-200 p-4 rounded-xl flex flex-col justify-between hover:border-purple-300 hover:shadow-md transition-all">
+                            <h5 class="text-[11px] font-bold text-slate-800 mb-3 leading-snug uppercase">RESSONANCIA MAGNETICA DE FACE / ATM – ODONTOLOGICA</h5>
+                            <a href="https://drive.google.com/file/d/14OSgOw89-JXth2mEOyPbGKZPZDVkHDeJ/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full gap-1.5 bg-purple-50 hover:bg-purple-100 text-purple-600 font-semibold px-3 py-2.5 rounded-lg text-[10px] uppercase tracking-wider transition-colors border border-purple-200"><i class="fa-brands fa-google-drive text-sm"></i> Acessar</a>
+                        </div>
+                        <div class="odontologia-protocol-item bg-white border border-slate-200 p-4 rounded-xl flex flex-col justify-between hover:border-purple-300 hover:shadow-md transition-all">
+                            <h5 class="text-[11px] font-bold text-slate-800 mb-3 leading-snug uppercase">TOMOGRAFIA DE FACE / SEIOS DA FACE / ATM - ODONTOLOGICA</h5>
+                            <a href="https://drive.google.com/file/d/1PdphIsJr6oi9Uh0psFSyEihi8JmeWKFc/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full gap-1.5 bg-purple-50 hover:bg-purple-100 text-purple-600 font-semibold px-3 py-2.5 rounded-lg text-[10px] uppercase tracking-wider transition-colors border border-purple-200"><i class="fa-brands fa-google-drive text-sm"></i> Acessar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- Detalhamento Especialidades (Modal) -->
@@ -1482,6 +1554,14 @@
             items.forEach(item => {
                 const text = item.textContent.toLowerCase();
                 item.style.display = text.includes(query) ? 'flex' : 'none';
+            });
+        }
+
+        // Filtro exclusivo dos protocolos de Odontologia
+        function filterModalOdontologia() {
+            const query = document.getElementById('search-modal-odontologia').value.toLocaleLowerCase('pt-BR');
+            document.querySelectorAll('.odontologia-protocol-item').forEach(item => {
+                item.style.display = item.textContent.toLocaleLowerCase('pt-BR').includes(query) ? 'flex' : 'none';
             });
         }
 
