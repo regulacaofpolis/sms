@@ -84,7 +84,7 @@
                             <a href="javascript:void(0)" onclick="openModal('modal-odontologia')" class="flex items-center gap-2.5 px-4 py-2.5 text-xs text-slate-700 hover:bg-slate-50 hover:text-brand-600 font-medium transition-colors">
                                 <i class="fa-solid fa-tooth text-brand-600 w-4"></i> Odontologia
                             </a>
-                            <a href="#protocolos-ses" class="flex items-center gap-2.5 px-4 py-2.5 text-xs text-slate-700 hover:bg-slate-50 hover:text-brand-600 font-medium transition-colors">
+                            <a href="javascript:void(0)" onclick="openModal('modal-protocolos-ses')" class="flex items-center gap-2.5 px-4 py-2.5 text-xs text-slate-700 hover:bg-slate-50 hover:text-brand-600 font-medium transition-colors">
                                 <i class="fa-solid fa-file-medical text-brand-600 w-4"></i> Protocolos SES
                             </a>
                         </div>
@@ -133,7 +133,7 @@
                     <a href="javascript:void(0)" onclick="openModal('modal-especialidades')" class="block py-1.5 text-xs text-slate-600 hover:text-brand-600 font-medium">Especialidades</a>
                     <a href="#exames" class="block py-1.5 text-xs text-slate-600 hover:text-brand-600 font-medium">Exames</a>
                     <a href="javascript:void(0)" onclick="openModal('modal-odontologia')" class="block py-1.5 text-xs text-slate-600 hover:text-brand-600 font-medium">Odontologia</a>
-                    <a href="#protocolos-ses" class="block py-1.5 text-xs text-slate-600 hover:text-brand-600 font-medium">Protocolos SES</a>
+                    <a href="javascript:void(0)" onclick="openModal('modal-protocolos-ses')" class="block py-1.5 text-xs text-slate-600 hover:text-brand-600 font-medium">Protocolos SES</a>
                 </div>
             </div>
 
@@ -278,11 +278,49 @@
                         Diretrizes regulatórias e fluxos de acesso pactuados junto à Secretaria de Estado da Saúde (SES/SC).
                     </p>
                 </div>
-                <a href="#downloads" class="text-brand-600 font-semibold text-xs inline-flex items-center hover:underline">
+                <a href="javascript:void(0)" onclick="openModal('modal-protocolos-ses')" class="text-brand-600 font-semibold text-xs inline-flex items-center hover:underline">
                     Ver Protocolos SES <i class="fa-solid fa-arrow-right ml-1.5"></i>
                 </a>
             </div>
 
+        </div>
+
+        <!-- Modal Protocolos SES: mantém a identidade visual do portal -->
+        <div id="modal-protocolos-ses" class="fixed inset-0 z-[100] hidden flex-col items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4">
+            <div class="bg-white w-full max-w-5xl max-h-[90vh] overflow-y-auto rounded-2xl shadow-2xl relative animate-fadeIn">
+                <button onclick="closeModal('modal-protocolos-ses')" aria-label="Fechar Protocolos SES" class="absolute top-4 right-4 text-slate-500 hover:text-slate-800 bg-slate-100 hover:bg-slate-200 rounded-full w-8 h-8 flex items-center justify-center transition-colors z-10"><i class="fa-solid fa-xmark"></i></button>
+                <div class="p-6 sm:p-10">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-10 h-10 bg-amber-100 text-amber-600 rounded-lg flex items-center justify-center text-xl"><i class="fa-solid fa-file-medical"></i></div>
+                        <h3 class="text-2xl font-bold text-slate-900">Protocolos SES</h3>
+                    </div>
+                    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-7">
+                        <h4 class="text-sm font-bold text-slate-900 mb-2">Protocolos de Acesso e Classificação de Risco — SES/SC</h4>
+                        <p class="text-sm text-slate-600 mb-4">Consulte os protocolos publicados pela Secretaria de Estado da Saúde de Santa Catarina.</p>
+                        <a href="https://www.saude.sc.gov.br/index.php/pt/regulacao/protocolo-de-acesso-e-classificacao-de-risco" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-amber-100 hover:bg-amber-200 text-amber-800 border border-amber-300 rounded-lg px-4 py-2.5 text-xs font-semibold transition-colors"><i class="fa-solid fa-arrow-up-right-from-square"></i> Acessar Protocolos SES</a>
+                    </div>
+                    <h4 class="text-lg font-bold text-slate-900 mb-4">Agendas de Matriciamento SES</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-6">
+                        <div class="bg-white border border-slate-200 rounded-xl p-5">
+                            <h5 class="text-base font-bold text-amber-700 mb-3">Matriciamento Compulsório</h5>
+                            <p class="text-sm text-slate-700 leading-relaxed mb-3"><strong>a) Para todo Estado:</strong> Hematologia Adulto.</p>
+                            <p class="text-sm text-slate-700 leading-relaxed"><strong>b) Somente para acesso aos prestadores da Grande Fpolis:</strong> Pediatria – Programa Saúde na Escola e Neurologia Adulto.</p>
+                        </div>
+                        <div class="bg-white border border-slate-200 rounded-xl p-5">
+                            <h5 class="text-base font-bold text-amber-700 mb-3">Matriciamento Consultivo</h5>
+                            <p class="text-sm text-slate-700 leading-relaxed mb-3"><strong>a) Para todo Estado:</strong> Ortopedia Adulto, Pneumologia Adulto e Pediatria, Tuberculose, Hanseníase, Hepatite B e C, HIV, Sífilis, Reumatologia Adulto, Infectologia Pediatria, Cirurgia Geral – Pediatria, Endocrinologia Adulto e Ortopedia Pediatria.</p>
+                            <p class="text-sm text-slate-700 leading-relaxed"><strong>b) Somente para acesso aos prestadores da Grande Fpolis:</strong> Gestante Alto Risco.</p>
+                        </div>
+                    </div>
+                    <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
+                        <h5 class="text-sm font-bold text-slate-900 mb-2">Contato GERAM</h5>
+                        <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-slate-700">
+                            <a href="tel:+554836647306" class="hover:text-amber-700"><i class="fa-solid fa-phone mr-2 text-amber-600"></i>(48) 3664-7306</a>
+                            <a href="mailto:geram@saude.sc.gov.br" class="hover:text-amber-700"><i class="fa-solid fa-envelope mr-2 text-amber-600"></i>geram@saude.sc.gov.br</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- Protocolos de Odontologia: mesma estrutura visual de Especialidades -->
@@ -1291,44 +1329,33 @@
 
         <!-- Detalhamento Saúde Auditiva (Modal) -->
         <div id="modal-saude-auditiva" class="fixed inset-0 z-[100] hidden flex-col items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4">
-            <div class="bg-white w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-2xl shadow-2xl relative animate-fadeIn">
-                <button onclick="closeModal('modal-saude-auditiva')" class="absolute top-4 right-4 text-slate-500 hover:text-slate-800 bg-slate-100 hover:bg-slate-200 rounded-full w-8 h-8 flex items-center justify-center transition-colors z-10">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-                <div class="p-6 sm:p-10">
-                    <div class="flex items-center space-x-3 mb-6">
-                        <div class="w-10 h-10 bg-teal-100 text-teal-600 rounded-lg flex items-center justify-center text-xl">
-                            <i class="fa-solid fa-ear-listen"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-slate-900">Saúde Auditiva</h3>
-                    </div>
-                    
-                    <p class="text-slate-700 text-sm leading-relaxed mb-6">
-                        O acesso aos serviços de <strong>Saúde Auditiva</strong> no SUS compreende a avaliação, diagnóstico e reabilitação, incluindo a concessão de Aparelhos de Amplificação Sonora Individual (AASI).
-                    </p>
-
-                    <div class="bg-teal-50 border-l-4 border-teal-500 p-5 rounded-r-xl mb-6">
-                        <h4 class="font-bold text-teal-900 mb-2">Fluxo de Encaminhamento</h4>
-                        <ol class="list-decimal list-inside space-y-2 text-sm text-teal-800">
-                            <li>O paciente passa por avaliação na Unidade Básica de Saúde (UBS).</li>
-                            <li>O médico da UBS solicita avaliação especializada em Otorrinolaringologia/Audiologia.</li>
-                            <li>A solicitação é inserida no SISREG.</li>
-                            <li>Após autorização pela regulação, o paciente é encaminhado ao serviço de referência para triagem e testes audiológicos.</li>
-                        </ol>
-                    </div>
-
-                    <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 mt-6">
-                        <h4 class="text-base font-bold text-slate-900 mb-3"><i class="fa-solid fa-folder-open text-brand-600 mr-2"></i> Documentação Obrigatória para Inserção no TFD Intraestadual</h4>
-                        <ul class="space-y-2 text-sm text-slate-700">
-                            <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mr-2 mt-0.5"></i> Cópia do documento de identidade com foto (ou certidão de nascimento para menores);</li>
-                            <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mr-2 mt-0.5"></i> Cópia do CPF;</li>
-                            <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mr-2 mt-0.5"></i> Cartão Nacional do SUS;</li>
-                            <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mr-2 mt-0.5"></i> Comprovante de residência atualizado no nome do paciente ou responsável legal;</li>
-                            <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mr-2 mt-0.5"></i> Laudo médico intraestadual preenchido e assinado.</li>
-                        </ul>
-                    </div>
-                </div>
+          <div class="bg-white w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-2xl shadow-2xl relative animate-fadeIn">
+            <button onclick="closeModal('modal-saude-auditiva')" aria-label="Fechar" class="absolute top-4 right-4 text-slate-500 hover:text-slate-800 bg-slate-100 hover:bg-slate-200 rounded-full w-8 h-8 flex items-center justify-center transition-colors z-10"><i class="fa-solid fa-xmark"></i></button>
+            <div class="p-6 sm:p-10 text-sm text-slate-700 leading-relaxed">
+              <div class="flex items-center space-x-3 mb-6"><div class="w-10 h-10 bg-teal-100 text-teal-600 rounded-lg flex items-center justify-center text-xl"><i class="fa-solid fa-ear-listen"></i></div><h3 class="text-2xl font-bold text-slate-900">Saúde Auditiva</h3></div>
+              <h4 class="text-lg font-bold text-teal-800 mb-3">Serviço Ambulatorial de Saúde Auditiva – SASA</h4>
+              <p class="mb-5">O Serviço de Atenção à Saúde Auditiva (SASA) presta serviço aos usuários do SUS com suspeita de deficiência auditiva, perda auditiva comprovada ou para diagnóstico diferencial. O objetivo é o diagnóstico, a concessão e a adaptação dos dispositivos de Tecnologia Assistiva (aparelho auditivo de amplificação sonora individual, implante coclear, prótese ancorada no osso e sistema FM) e o acompanhamento anual.</p>
+              <div class="bg-teal-50 border-l-4 border-teal-500 p-5 rounded-r-xl mb-6 space-y-3">
+                <h4 class="font-bold text-teal-900">Acesso ao SASA</h4>
+                <p>O paciente ou representante deve encaminhar a documentação para o <strong>Setor de Alto Custo</strong> de uma das seguintes formas:</p>
+                <p><i class="fa-solid fa-location-dot text-teal-700 mr-1"></i> <strong>Presencialmente:</strong> Secretaria Municipal de Saúde – Setor Alto Custo<br>Av. Prof. Henrique da Silva Fontes, 6100 – Trindade – Florianópolis/SC<br><strong>Segunda a sexta-feira, das 8h às 14h.</strong></p>
+                <p><i class="fa-solid fa-envelope text-teal-700 mr-1"></i> <strong>Por e-mail (preferencial):</strong> <a class="text-teal-700 underline break-all" href="mailto:saudeauditivafpolis@gmail.com">saudeauditivafpolis@gmail.com</a></p>
+                <p><strong>Prazo de resposta para e-mails:</strong> até 2 dias úteis. Utilize preferencialmente o envio remoto para evitar deslocamentos.</p>
+              </div>
+              <h4 class="text-lg font-bold text-slate-900 mb-3">1. Abertura de processo novo</h4>
+              <div class="space-y-4 mb-6">
+                <div class="bg-slate-50 border border-slate-200 p-5 rounded-xl"><h5 class="font-bold text-teal-800 mb-2">1.1 Recém-nascido — documentação necessária</h5><ul class="list-disc pl-5 space-y-2"><li>Cópia da Caderneta de Saúde (Teste de Triagem Neonatal/Teste da Orelhinha), páginas do TESTE e do RETESTE ou o exame Bera/PEATE;</li><li>Encaminhamento para Serviço Ambulatorial de Saúde Auditiva – SASA original (<a href="https://regulacaosmsfloripa.com/wp-content/uploads/2025/08/2.pdf" target="_blank" rel="noopener noreferrer" class="text-teal-700 font-semibold underline">DOCUMENTO <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a>);</li><li>Cópia de RG, CPF, CNS e comprovante de residência atualizado;</li><li>Telefones atualizados para contato, de preferência, três (3) opções.</li></ul></div>
+                <div class="bg-slate-50 border border-slate-200 p-5 rounded-xl"><h5 class="font-bold text-teal-800 mb-2">1.2 Crianças, adolescentes, adultos, idosos e PCD — documentação necessária</h5><ul class="list-disc pl-5 space-y-2"><li>Encaminhamento para o SASA preenchido por Médico Otorrinolaringologista, Fonoaudiólogo ou Médico de Saúde da Família (obrigatório o documento original com assinatura e carimbo do registro profissional) – <a href="https://regulacaosmsfloripa.com/wp-content/uploads/2025/08/2.pdf" target="_blank" rel="noopener noreferrer" class="text-teal-700 font-semibold underline">DOCUMENTO <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a>;</li><li>Cópia de RG, CPF e CNS;</li><li>Cópia do comprovante de residência atualizado em nome do usuário (caso não tenha, deverá preencher a declaração de residência e anexar ao comprovante), conforme <a href="https://regulacaosmsfloripa.com/wp-content/uploads/2025/08/3.pdf" target="_blank" rel="noopener noreferrer" class="text-teal-700 font-semibold underline">DOCUMENTO <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a>;</li><li>Estudantes (&gt;17 anos): atestado de frequência;</li><li>Trabalhadores (&gt;65 anos): documento comprobatório;</li><li>Audiometria atualizada (idealmente, até 1 ano);</li><li>Telefones para contato.</li></ul></div>
+              </div>
+              <h4 class="text-lg font-bold text-slate-900 mb-2">2. Reposição de Aparelho Auditivo de Amplificação Sonora Individual (AASI)</h4><p class="mb-4">Há três modalidades de serviço:</p>
+              <div class="space-y-4 mb-6">
+                <div class="bg-slate-50 border border-slate-200 p-5 rounded-xl"><h5 class="font-bold text-teal-800 mb-2">2.1 Reposição por Orçamento</h5><p class="mb-2"><strong>Para AASI estragado ou sem conserto — documentação necessária:</strong></p><ul class="list-disc pl-5 space-y-2"><li>Orçamento original da Assistência Técnica em papel timbrado, assinado e carimbado. Deve informar: quantidade (UM ou DOIS) e para qual orelha é a reposição; marca, modelo e número de série do aparelho; valor do orçamento;</li><li>Cópia do comprovante de residência;</li><li>Cópia do Cartão Nacional de Saúde (CNS);</li><li>Telefones para contato.</li></ul></div>
+                <div class="bg-slate-50 border border-slate-200 p-5 rounded-xl"><h5 class="font-bold text-teal-800 mb-2">2.2 Reposição por Boletim de Ocorrência Policial – BO</h5><p class="mb-2"><strong>Para perda ou roubo de AASI — documentação necessária:</strong></p><ul class="list-disc pl-5 space-y-2"><li>BO informando a quantidade (UM ou DOIS aparelhos), qual orelha (direita ou esquerda) e o número de série do(s) aparelho(s);</li><li>Cópia do comprovante de residência;</li><li>Cartão Nacional de Saúde – CNS;</li><li>Telefones para contato.</li></ul></div>
+                <div class="bg-slate-50 border border-slate-200 p-5 rounded-xl"><h5 class="font-bold text-teal-800 mb-2">2.3 Checklist do Prestador</h5><p>Substitui a reposição por orçamento quando não houver possibilidade de emissão de um laudo da assistência técnica.</p><ul class="list-disc pl-5 mt-2"><li>Será preenchido pelo fonoaudiólogo ou assistente social do SASA.</li></ul></div>
+              </div>
+              <div class="bg-teal-50 border border-teal-200 p-5 rounded-xl space-y-2"><h4 class="font-bold text-teal-900">Contatos do SASA</h4><p><i class="fa-solid fa-phone mr-2"></i>Telefones: <a href="tel:+554832391576" class="underline">(48) 3239-1576</a> ou <a href="tel:+554832391603" class="underline">3239-1603</a></p><p><i class="fa-solid fa-envelope mr-2"></i>E-mail para envio de documentos: <a href="mailto:saudeauditivafpolis@gmail.com" class="text-teal-700 underline break-all">saudeauditivafpolis@gmail.com</a></p><p><i class="fa-solid fa-envelope mr-2"></i>E-mail para dúvidas de Florianópolis e outros municípios: <a href="mailto:sasaregfpolis@gmail.com" class="text-teal-700 underline break-all">sasaregfpolis@gmail.com</a></p></div>
             </div>
+          </div>
         </div>
     </section>
 
