@@ -171,11 +171,13 @@
             <div class="max-w-2xl mx-auto relative">
                 <div class="flex items-center bg-white rounded-xl shadow-lg overflow-hidden p-1.5 border border-slate-200">
                     <i class="fa-solid fa-magnifying-glass text-slate-400 text-lg ml-3 mr-2"></i>
-                    <input type="text" id="search-input" onkeyup="filterItems()" placeholder="Busque por protocolo, exame, especialidade ou documento..." class="w-full py-2.5 px-2 text-slate-800 text-sm sm:text-base focus:outline-none">
-                    <button class="bg-brand-600 hover:bg-brand-700 text-white px-5 py-2.5 rounded-lg font-medium text-sm transition-colors hidden sm:block">
+                    <input type="text" id="search-input" oninput="filterItems()" onkeydown="if(event.key === 'Enter'){event.preventDefault();filterItems();}" placeholder="Busque por protocolo, exame, especialidade ou documento..." class="w-full py-2.5 px-2 text-slate-800 text-sm sm:text-base focus:outline-none">
+                    <button type="button" onclick="filterItems()" class="bg-brand-600 hover:bg-brand-700 text-white px-5 py-2.5 rounded-lg font-medium text-sm transition-colors hidden sm:block">
                         Pesquisar
                     </button>
                 </div>
+                <!-- Resultados da busca global; ocultos enquanto o campo está vazio -->
+                <div id="search-results" class="hidden mt-2 bg-white text-slate-800 rounded-xl border border-slate-200 shadow-xl max-h-80 overflow-y-auto text-left" role="region" aria-label="Resultados da pesquisa" aria-live="polite"></div>
             </div>
 
             <div class="mt-12 max-w-4xl mx-auto">
@@ -1556,20 +1558,82 @@
             });
         }
 
-        // Live filter search function
-        function filterItems() {
-            const query = document.getElementById('search-input').value.toLowerCase();
-            const cards = document.querySelectorAll('.item-card');
-            const files = document.querySelectorAll('.file-row');
+        // Pesquisa global no conteúdo HTML desta página (não pesquisa dentro dos PDFs do Drive).
+        const normalizeSearch = value => (value || '').toLocaleLowerCase('pt-BR')
+            .normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/\s+/g, ' ').trim();
 
-            cards.forEach(card => {
-                const text = card.textContent.toLowerCase();
-                card.style.display = text.includes(query) ? 'flex' : 'none';
+        function getSearchIndex() {
+            const results = [];
+            const add = (title, description, modalId, url, anchor) => {
+                if (title && title.trim()) results.push({title: title.trim(), description: (description || '').trim(), modalId, url, anchor});
+            };
+            // Cada protocolo vira um resultado próprio, com link direto para seu documento.
+            document.querySelectorAll('#modal-especialidades .protocol-item, #modal-odontologia .odontologia-protocol-item').forEach(el => {
+                const title = el.querySelector('h5')?.textContent || '';
+                const modalId = el.closest('[id^="modal-"]')?.id;
+                const url = el.querySelector('a[href^="https://"]')?.href || null;
+                add(title, modalId === 'modal-odontologia' ? 'Odontologia' : 'Especialidades', modalId, url, null);
             });
-
-            files.forEach(file => {
-                const text = file.textContent.toLowerCase();
-                file.style.display = text.includes(query) ? 'flex' : 'none';
+            // Documentos disponíveis na área de downloads.
+            document.querySelectorAll('.file-row').forEach(el => {
+                const title = el.querySelector('h4')?.textContent || '';
+                const description = el.querySelector('p')?.textContent || '';
+                add(title, 'Downloads e Documentos — ' + description, null, el.querySelector('a[href]')?.href || null, 'downloads');
+            });
+            // Informações das janelas e suas subseções, inclusive SASA, SES, TFD e APAC.
+            document.querySelectorAll('[id^="modal-"]').forEach(modal => {
+                const modalTitle = modal.querySelector('h3')?.textContent?.trim() || modal.id.replace('modal-', '');
+                add(modalTitle, modal.textContent.slice(0, 9000), modal.id, null, null);
+                modal.querySelectorAll('h4, h5').forEach(h => {
+                    if (h.closest('.protocol-item, .odontologia-protocol-item')) return;
+                    const section = h.closest('section, article, details, .rounded-xl') || h.parentElement;
+                    add(h.textContent, modalTitle + ' — ' + (section?.textContent || '').slice(0, 1500), modal.id, null, null);
+                });
+            });
+            // Seções e cartões visíveis da página.
+            document.querySelectorAll('.item-card, #faq details, #noticias article').forEach(el => {
+                const title = el.querySelector('h3, h4, summary')?.textContent || '';
+                add(title, el.textContent.slice(0, 1000), null, null, el.id || el.closest('section[id]')?.id);
+            });
+            return results;
+        }
+        const globalSearchIndex = getSearchIndex();
+        function filterItems() {
+            const query = normalizeSearch(document.getElementById('search-input').value);
+            const panel = document.getElementById('search-results');
+            panel.replaceChildren();
+            if (!query) { panel.classList.add('hidden'); return; }
+            const terms = query.split(' ').filter(Boolean);
+            const matches = globalSearchIndex.filter(item => {
+                const haystack = normalizeSearch(item.title + ' ' + item.description);
+                return terms.every(term => haystack.includes(term));
+            }).sort((a,b) => {
+                const score = item => normalizeSearch(item.title).includes(query) ? 0 : 1;
+                return score(a) - score(b);
+            }).slice(0, 30);
+            panel.classList.remove('hidden');
+            const heading = document.createElement('p');
+            heading.className = 'px-4 py-2 text-xs text-slate-500 border-b border-slate-100';
+            heading.textContent = matches.length ? `Resultados encontrados: ${matches.length}${matches.length === 30 ? ' (exibindo até 30)' : ''}` : 'Nenhum resultado encontrado. Tente outro termo.';
+            panel.appendChild(heading);
+            matches.forEach(item => {
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = 'block w-full text-left px-4 py-3 border-b border-slate-100 hover:bg-brand-50 focus:bg-brand-50 focus:outline-none';
+                const title = document.createElement('span');
+                title.className = 'block text-sm font-semibold text-brand-700';
+                title.textContent = item.title;
+                const sub = document.createElement('span');
+                sub.className = 'block text-xs text-slate-500 mt-1';
+                sub.textContent = item.url ? 'Abrir documento' : item.modalId ? 'Ver informações na seção' : 'Ir para a seção';
+                btn.append(title, sub);
+                btn.addEventListener('click', () => {
+                    panel.classList.add('hidden');
+                    if (item.url) window.open(item.url, '_blank', 'noopener,noreferrer');
+                    else if (item.modalId) openModal(item.modalId);
+                    else if (item.anchor) document.getElementById(item.anchor)?.scrollIntoView({behavior:'smooth'});
+                });
+                panel.appendChild(btn);
             });
         }
 
