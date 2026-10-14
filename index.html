@@ -87,6 +87,9 @@
                             <a href="javascript:void(0)" onclick="openModal('modal-protocolos-ses')" class="flex items-center gap-2.5 px-4 py-2.5 text-xs text-slate-700 hover:bg-slate-50 hover:text-brand-600 font-medium transition-colors">
                                 <i class="fa-solid fa-file-medical text-brand-600 w-4"></i> Protocolos SES
                             </a>
+                            <a href="javascript:void(0)" onclick="openModal('modal-portarias-normativas')" class="flex items-center gap-2.5 px-4 py-2.5 text-xs text-slate-700 hover:bg-slate-50 hover:text-brand-600 font-medium transition-colors">
+                                <i class="fa-solid fa-scale-balanced text-brand-600 w-4"></i> Portarias e Normativas
+                            </a>
                         </div>
                     </div>
 
@@ -134,6 +137,7 @@
                     <a href="javascript:void(0)" onclick="openModal('modal-exames')" class="block py-1.5 text-xs text-slate-600 hover:text-brand-600 font-medium">Exames</a>
                     <a href="javascript:void(0)" onclick="openModal('modal-odontologia')" class="block py-1.5 text-xs text-slate-600 hover:text-brand-600 font-medium">Odontologia</a>
                     <a href="javascript:void(0)" onclick="openModal('modal-protocolos-ses')" class="block py-1.5 text-xs text-slate-600 hover:text-brand-600 font-medium">Protocolos SES</a>
+                    <a href="javascript:void(0)" onclick="openModal('modal-portarias-normativas')" class="block py-1.5 text-xs text-slate-600 hover:text-brand-600 font-medium">Portarias e Normativas</a>
                 </div>
             </div>
 
@@ -285,8 +289,46 @@
                 </a>
             </div>
 
+            <!-- Subitem 5: Portarias e Normativas -->
+            <div id="portarias-normativas" class="item-card bg-white border border-slate-200 rounded-xl p-6 hover:shadow-lg transition-all hover:-translate-y-1 flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-lg flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-scale-balanced"></i></div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Portarias e Normativas</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed mb-4">Consulte políticas de regulação, instruções normativas e legislação aplicável.</p>
+                </div>
+                <a href="javascript:void(0)" onclick="openModal('modal-portarias-normativas')" class="text-brand-600 font-semibold text-xs inline-flex items-center hover:underline">Ver Portarias e Normativas <i class="fa-solid fa-arrow-right ml-1.5"></i></a>
+            </div>
+
         </div>
 
+
+        <!-- Modal Portarias e Normativas -->
+        <div id="modal-portarias-normativas" class="fixed inset-0 z-[100] hidden flex-col items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4">
+            <div class="bg-white w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-2xl shadow-2xl relative animate-fadeIn">
+                <button onclick="closeModal('modal-portarias-normativas')" aria-label="Fechar Portarias e Normativas" class="absolute top-4 right-4 text-slate-500 hover:text-slate-800 bg-slate-100 rounded-full w-8 h-8 flex items-center justify-center z-10"><i class="fa-solid fa-xmark"></i></button>
+                <div class="p-6 sm:p-10">
+                    <div class="flex items-center gap-3 mb-6"><div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-xl flex items-center justify-center text-xl"><i class="fa-solid fa-scale-balanced"></i></div><h3 class="text-xl sm:text-2xl font-bold text-slate-900 pr-8">Portarias e Normativas</h3></div>
+                    <div class="space-y-3">
+                    <div class="portaria-item border border-slate-200 rounded-xl p-4 sm:p-5 hover:border-indigo-300 transition-colors flex flex-col sm:flex-row sm:items-center gap-3 justify-between">
+                        <h4 class="text-sm font-semibold text-slate-800 leading-relaxed flex-1">Política Nacional de Regulação (2008)</h4>
+                        <a href="https://bvsms.saude.gov.br/bvs/saudelegis/gm/2008/prt1559_01_08_2008.html" target="_blank" rel="noopener noreferrer" class="shrink-0 inline-flex items-center justify-center gap-2 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 border border-indigo-200 rounded-lg px-4 py-2 text-xs font-bold transition-colors">Acessar <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                    <div class="portaria-item border border-slate-200 rounded-xl p-4 sm:p-5 hover:border-indigo-300 transition-colors flex flex-col sm:flex-row sm:items-center gap-3 justify-between">
+                        <h4 class="text-sm font-semibold text-slate-800 leading-relaxed flex-1">Política Nacional de Regulação (2025)</h4>
+                        <a href="https://www.in.gov.br/web/dou/-/portaria-gm/ms-n-9.262-de-30-de-dezembro-de-2025-678996477" target="_blank" rel="noopener noreferrer" class="shrink-0 inline-flex items-center justify-center gap-2 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 border border-indigo-200 rounded-lg px-4 py-2 text-xs font-bold transition-colors">Acessar <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                    <div class="portaria-item border border-slate-200 rounded-xl p-4 sm:p-5 hover:border-indigo-300 transition-colors flex flex-col sm:flex-row sm:items-center gap-3 justify-between">
+                        <h4 class="text-sm font-semibold text-slate-800 leading-relaxed flex-1">INSTRUÇÃO NORMATIVA Nº 07/SMS/GAB/2019 - Estabelece diretrizes e procedimentos para instituir modelo de agenda para marcação de consultas, exames e procedimentos na atenção especializada no município de Florianópolis</h4>
+                        <a href="https://drive.google.com/file/d/1O0gNKRkK0icZvBNEYGtv30zqxa4p3I7b/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="shrink-0 inline-flex items-center justify-center gap-2 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 border border-indigo-200 rounded-lg px-4 py-2 text-xs font-bold transition-colors">Acessar <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                    <div class="portaria-item border border-slate-200 rounded-xl p-4 sm:p-5 hover:border-indigo-300 transition-colors flex flex-col sm:flex-row sm:items-center gap-3 justify-between">
+                        <h4 class="text-sm font-semibold text-slate-800 leading-relaxed flex-1">LEI Nº 17.066, DE 11 DE JANEIRO DE 2017 - Dispõe sobre a publicação, na internet, da lista de espera dos pacientes que aguardam por consultas (discriminadas por especialidade), exames e intervenções cirúrgicas e outros procedimentos nos estabelecimentos da rede pública de saúde do Estado de Santa Catarina.</h4>
+                        <a href="https://leis.alesc.sc.gov.br/html/2017/17066_2017_Lei.html" target="_blank" rel="noopener noreferrer" class="shrink-0 inline-flex items-center justify-center gap-2 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 border border-indigo-200 rounded-lg px-4 py-2 text-xs font-bold transition-colors">Acessar <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- Modal Protocolos de Exames -->
         <div id="modal-exames" class="fixed inset-0 z-[100] hidden flex-col items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4">
@@ -1591,6 +1633,9 @@
             document.querySelectorAll('#modal-exames .exames-protocol-item h6').forEach(h => {
                 const a = h.parentElement.querySelector('a[href]');
                 add(h.textContent, 'Exames — Ressonância ou Tomografia', 'modal-exames', a?.href || null, null);
+            });
+            document.querySelectorAll('#modal-portarias-normativas .portaria-item').forEach(el => {
+                add(el.querySelector('h4')?.textContent || '', 'Portarias e Normativas', 'modal-portarias-normativas', el.querySelector('a[href]')?.href || null, null);
             });
             // Documentos disponíveis na área de downloads.
             document.querySelectorAll('.file-row').forEach(el => {
